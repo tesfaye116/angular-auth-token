@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   onClickSubmit(data: any) {
-    //if the login is successful, navigate to the product component 
     if (this.service.login(data.email, data.password)) {
-      //navigate to the product component
       this.service.login(data.email, data.password).subscribe(() => {
         this.router.navigate(['/product']);
         console.log('login successful');
@@ -37,5 +35,6 @@ export class LoginComponent implements OnInit {
 
 
   }
+  
 }
 // Language: typescript

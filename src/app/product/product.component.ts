@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-product',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  currentUser: any;
+  constructor(
+    private authService: AuthService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
+
+  }
+
+  logout() {
+    this.authService.logout();
+    this.route.navigate(['/']);
+    console.log("logout success");
   }
 
 }

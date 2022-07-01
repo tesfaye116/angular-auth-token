@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 //auth service
 import { AuthService } from './auth.service';
 import { ProductComponent } from './product/product.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -20,7 +21,8 @@ import { ProductComponent } from './product/product.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

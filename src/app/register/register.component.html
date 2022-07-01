@@ -1,0 +1,63 @@
+<!-- card with title and icon -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Register</h4>
+  </div>
+  <div class="card-body">
+    <!-- form -->
+    <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+      <div class="form-group">
+        <label for="name">User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+          placeholder="Enter name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password_confirmation"
+          formControlName="password_confirmation"
+          placeholder="Confirm password"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-dark btn-block"
+      >
+        Submit
+      </button>
+    </form>
+    <!-- end form -->
+
+    <!-- alrade habve one account -->
+    <div class="text-center mt-3" >
+      <a [routerLink]="['/']">Already have an account?</a>
+    </div>
+  </div>
+</div>
