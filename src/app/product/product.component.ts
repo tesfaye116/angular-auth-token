@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.route.navigate(['/']);
-    console.log("logout success");
+    alert('Logout successful');
   }
 
 }

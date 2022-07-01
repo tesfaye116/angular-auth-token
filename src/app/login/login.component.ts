@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private service: AuthService, private router: Router ) { }
+  constructor(private service: AuthService, private router: Router) { }
 
   loginForm = new FormGroup({
     //validators are used to validate the inputs
@@ -24,17 +24,15 @@ export class LoginComponent implements OnInit {
     if (this.service.login(data.email, data.password)) {
       this.service.login(data.email, data.password).subscribe(() => {
         this.router.navigate(['/product']);
-        console.log('login successful');
+        alert('Login successful');
       }
-      , (error) => {  
-        console.log(error , 'login failed');
-      }
+        , (error) => {
+
+          alert('Login failed');
+        }
       );
 
     }
-
-
   }
-  
 }
 // Language: typescript
